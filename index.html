@@ -1,80 +1,114 @@
-02.08 2:06 AM
-Index.html
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Will You Be My Valentine? ❤️</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #ffe6f0;
-            text-align: center;
-            padding-top: 100px;
-        }
+<title>For Rohit ❤️</title>
 
-        h1 {
-            color: #ff3366;
-            font-size: 36px;
-        }
+<style>
+body {
+    background: #ffe6f0;
+    text-align: center;
+    font-family: Arial;
+    overflow: hidden;
+}
 
-        .btn {
-            padding: 15px 30px;
-            font-size: 20px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            margin: 20px;
-        }
+h1 {
+    color: #ff3366;
+    margin-top: 60px;
+}
 
-        #yes {
-            background-color: #ff3366;
-            color: white;
-        }
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    margin: 20px;
+    cursor: pointer;
+}
 
-        #no {
-            background-color: #999;
-            color: white;
-            position: absolute;
-        }
+#yes {
+    background: #ff3366;
+    color: white;
+}
 
-        #result {
-            display: none;
-            margin-top: 40px;
-        }
+#no {
+    background: grey;
+    color: white;
+    position: absolute;
+}
 
-        img {
-            width: 250px;
-            border-radius: 15px;
-            margin-top: 20px;
-        }
-    </style>
+#result {
+    display: none;
+    margin-top: 20px;
+}
+
+img {
+    width: 250px;
+    border-radius: 15px;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: #ff3366;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+</style>
 </head>
+
 <body>
 
 <h1>Rohit, Will You Be My Valentine? ❤️</h1>
 
-<button class="btn" id="yes" onclick="showLove()">Yes </button>
-<button class="btn" id="no" onmouseover="moveNo()">No </button>
+<button id="yes" onclick="showLove()">Yes 💖</button>
+<button id="no" onmouseover="moveNo()">No 😢</button>
 
 <div id="result">
-    <h2 style="color:#ff3366;">Congratulations! Best decision ever </h2>
-    <p>Love you forever, Rohit ❤️ – Supriya</p>
-    
-    <!-- Replace the image link below with your photo -->
-    <img src="832101055361077248%20(1).jpg" width="250" alt="Our Photo">
+    <h2 style="color:#ff3366;">Congratulations! Best decision ever 😍</h2>
+    <p>Love you forever, Rohit ❤️ – Priya</p>
+    <h3>Rohit ❤️ Priya Forever</h3>
+
+    <!-- Your photo -->
+    <img src="832101055361077248%20(1).jpg" alt="Our Photo">
 </div>
+
+<!-- Background Music -->
+<audio id="music" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+</audio>
 
 <script>
 function moveNo() {
-    var noBtn = document.getElementById("no");
     var x = Math.random() * window.innerWidth * 0.8;
     var y = Math.random() * window.innerHeight * 0.8;
+    var noBtn = document.getElementById("no");
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
 }
 
 function showLove() {
     document.getElementById("result").style.display = "block";
+    document.getElementById("music").play();
+    createHearts();
+}
+
+function createHearts() {
+    setInterval(function() {
+        var heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.innerHTML = "❤️";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 6000);
+    }, 300);
 }
 </script>
 
