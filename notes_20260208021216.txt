@@ -58,7 +58,7 @@ Index.html
 
 <div id="result">
     <h2 style="color:#ff3366;">Congratulations! Best decision ever </h2>
-    <p>Love you forever, Rohit ❤️ – Priya</p>
+    <p>Love you forever, Rohit ❤️ – Supriya</p>
     
     <!-- Replace the image link below with your photo -->
     <img src="https://via.placeholder.com/250" alt="Our Photo">
